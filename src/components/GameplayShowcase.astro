@@ -1,0 +1,82 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	image: string;
+  image_right?: boolean;
+}
+
+const { title, body, image, image_right = false } = Astro.props;
+---
+
+<li class={`gameplay-showcase-card ${image_right && 'right'}`} >
+  <div>
+    <h2 class={image_right && 'right'}>
+      {title}
+    </h2>
+    <p class={image_right && 'right'}>
+      {body}
+    </p>
+  </div>
+  <img src={image}/>
+</li>
+
+<style>
+	.gameplay-showcase-card {
+		list-style: none;
+		display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    max-width: 1000px;
+	}
+  .gameplay-showcase-card:not(.right) {
+    flex-direction: row-reverse;
+  }
+  .gameplay-showcase-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 7px;
+  }
+  .gameplay-showcase-card p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  .gameplay-showcase-card > div {
+    padding: 1rem;
+  }
+  .gameplay-showcase-card > img {
+    height: 300px;
+  }
+  .right {
+    text-align: right;
+  }
+  @media (max-width: 1150px) {
+    .gameplay-showcase-card > img {
+      height: 250px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .gameplay-showcase-card > img {
+      height: 200px;
+    }
+  }
+  @media (max-width: 850px) {
+    .gameplay-showcase-card > img {
+      height: 160px;
+    }
+  }
+  @media (max-width: 700px) {
+    .gameplay-showcase-card {
+      flex-direction: column !important;
+      padding-bottom: 0;
+    }
+    .gameplay-showcase-card > img {
+      width: 100%;
+      height: auto;
+      margin-top: 0;
+    }
+  }
+</style>

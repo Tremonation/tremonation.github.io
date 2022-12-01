@@ -1,0 +1,39 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<div>
+			<HeaderLink href="/">Tremonation</HeaderLink>
+			<HeaderLink href="/pakko-in-the-evernight">Pakko in the Evernight</HeaderLink>
+			<HeaderLink href="/pakko-in-the-evernight/devlog">Devlog</HeaderLink>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav {
+    margin: 3em 0;
+    width: 600px;
+  }
+	div {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	svg {
+		fill: var(--link-color);
+	}
+  @media (max-width: 510px) {
+    div {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

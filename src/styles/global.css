@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "04B_03";
+  src: url("/04B_03.ttf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "04B_03", sans-serif;
+
+  background-image: url("/background_trees.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  margin: 0 20px;
+  
+  color: #fff;
+}
+
+a:visited {
+  color: rgb(134, 1, 196);
+}
+
+main {
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  max-width: 48rem;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 .9rem 0;
+
+  background: rgb(8,77,53);
+  background: linear-gradient(90deg, rgba(8,77,53,1) 0%, rgba(19,102,60,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+  margin: 1rem auto;
+}

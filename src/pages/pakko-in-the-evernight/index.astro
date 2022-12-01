@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import GameplayShowcase from '../../components/GameplayShowcase.astro';
+---
+
+<Layout title="Pakko in the Evernight" description="All the forest is stuck in an eternal night.">
+  <Header />
+  <main>
+    <img src="/pakko-in-the-evernight/hero.png" alt="Hero" style="margin-top: 0;"/>
+    <p class="downloadable-game">A downloadable game for <strong>Windows</strong>.</p>
+    
+    <div class="flex-container">
+      <img src="/pakko-in-the-evernight/about.png" alt="About"/>
+      
+      <div>
+        <p>
+          Pakko in the evernight is an action plataformer with PvE and a story about overcoming our fears.
+        </p>
+        <p>
+          Pakko is a fox that lives in a taiga forest in his humble home, his favorite hobby is throwing his boomerang close to home. Pakko is brave for everything except one thing, the dark, so he always sleeps with a bottle of fireflies by his bed.
+        </p>
+      </div>
+    </div>
+    <p>
+      Pakko was calmly throwing his boomerang in his garden, when suddenly the sun disappeared, everything went dark and soon Pakko was scared, he had no idea of what was going on. In fact the sun had disappeared due to an evil Mage who stole the sun to absorb its power, and with that power he controlled some plants that became fierce predators that took and destroyed the entire forest. The Mage also kidnapped all the animals he encountered and took their energy away from them to have more <strong>POWER</strong>.
+    </p>
+    <div id="extraInfo" class="hide">
+      <p>
+        Pakko, with luck, ran away and managed to take shelter, now his mission is to save the forest. Pakko remembered the Elder Owl and decided to go to her house to try to save himself, since his house had burned down. The way was still long and Pakko knew he should have be careful although he didn't quite know what was going on in the forest, halfway there he came across a species of giant big-nosed potato and got very worried, what would it be?
+      </p>
+    </div>
+    <button id="readmoreBtn" style="margin-bottom: 16px;">Read more</button>
+    <br/>
+    
+    <a href="https://tremonation.itch.io/pakko-in-the-evernight/purchase" class="download-btn">Download Now</a>
+    
+    <br/>
+    
+    <GameplayShowcase title="Main Menu" body="Change settings, switch gamemodes... You can do everything here!" image="/pakko-in-the-evernight/main_menu.png" image_right={false}/>
+    <GameplayShowcase title="Save the Forest" body="This is your main mission! To save the forest! (it sounds more complicated than it actually is, I'm pretty sure)" image="/pakko-in-the-evernight/save_the_forest.png" image_right={true}/>
+    <GameplayShowcase title="Parkour!" body="Jump whenever you want (if it isn't sealed with invisible barriers) and practice your parkour skills!" image="/pakko-in-the-evernight/jump.png" image_right={false}/>
+    <GameplayShowcase title="Explore Structures" body="Check out the houses we made for the game (you might just find and Easter Egg, who knows!)" image="/pakko-in-the-evernight/house.png" image_right={true}/>
+    
+    <img src="/pakko-in-the-evernight/controls.png" alt="Controls" class="normal-image"/>
+    <br/>
+    <h2>Keyboard / Controller</h2>
+    <ul>
+      <li>Move: <strong>WASD</strong> or <strong>Arrow Keys</strong> / <strong>Left Stick</strong></li>
+      <li>Jump: <strong>W</strong> or <strong>Up</strong> / <strong>A</strong></li>
+      <li>Melee Attack: <strong>Z</strong>, <strong>L</strong> or <strong>LMB</strong> / <strong>B</strong> <i>(requires sword)</i></li>
+      <img src="/pakko-in-the-evernight/melee_attack.gif" alt="Melee Attack"/>
+      <li>Long Range Attack: <strong>H</strong>, <strong>K</strong> or <strong>RMB</strong> / <strong>A</strong> <i>(requires bow)</i></li>
+      <img src="/pakko-in-the-evernight/long_range_attack.gif" alt="Long Range Attack"/>
+      <li>Interact: <strong>C</strong>, <strong>Space</strong> or <strong>Enter</strong> / <strong>y</strong></li>
+      <li>Pause: <strong>Escape</strong> / <strong>Start</strong></li>
+    </ul>
+    <p style="font-size: 1.2rem; padding: 1.5rem 2rem; background-color: rgba(0, 0, 0, 0.4); border-radius: 1rem;">All the forest is stuck in an eternal night.</p>
+    <p>Check our our <a href="/pakko-in-the-evernight/devlog">Devlog</a></p>
+  </main>
+  <script>
+    const extraInfo = document.getElementById("extraInfo");
+    const readMoreBtn = document.getElementById("readmoreBtn");
+    
+    readMoreBtn!.addEventListener("click", () => {
+      extraInfo!.classList.toggle("hide");
+      readMoreBtn!.innerHTML = extraInfo!.classList.contains("hide") ? "Read more" : "Read less";
+    });
+  </script>
+</Layout>
+
+<style>
+  main {
+    background-color: transparent;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+  }
+  .flex-container p {
+    margin: 0 20px 10px;
+  }
+  .flex-container button {
+    margin: 0 20px 0;
+  }
+  .flex-container img {
+    width: 60%;
+    height: auto;
+  }
+  hr {
+    width: 100%;
+    border-top: 1px solid white;
+    margin: 20px 0;
+  }
+  main p {
+    max-width: 1000px;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  strong {
+    background: rgb(0,102,0);
+		background: linear-gradient(90deg, rgba(0,102,0,1) 20%, rgba(255,255,0,1) 42%, rgba(255,0,0,1) 64%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+  }
+  .downloadable-game {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    margin-top: 3px;
+  }
+  .hide {
+    display: none;
+  }
+  .download-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    background: linear-gradient(-40deg, #11d60a, #00571d, #11d60a);
+    background-size: 300% 300%;
+    animation: gradient 5s ease-in-out infinite;
+    transition: all 0.15s ease-in-out;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .download-btn:visited {
+    color: #fff;
+  }
+  .download-btn:hover {
+    transform: scale(1.1);
+    box-shadow: #ffffff 3px 3px 0;
+  }
+  #readmoreBtn {
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+    font-family: inherit;
+    font-size: .8rem;
+    cursor: pointer;
+  }
+  @media (max-width: 790px) {
+    .flex-container {
+      flex-direction: column;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    #readmoreBtn {
+      font-size: 1.1rem !important;
+    }
+    .download-btn {
+      font-size: 1.6rem;
+    }
+    .flex-container img {
+      width: 82%;
+    }
+    .flex-container p:first-child {
+      margin: 0 0 20px;
+    }
+    .flex-container p {
+      margin: 0 0 5px;
+    }
+    .normal-image {
+      width: 82%;
+    }
+    .downloadable-game {
+      margin-bottom: 15px;
+    }
+  }
+@media (max-width: 620px) {
+  .flex-container img {
+    width: 90%;
+  }
+  .normal-image {
+    width: 90%;
+  }
+  .downloadable-game {
+    font-size: 4vw;
+  }
+}
+</style>
