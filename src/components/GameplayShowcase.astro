@@ -71,12 +71,15 @@ const { title, body, image, image_right = false } = Astro.props;
   @media (max-width: 700px) {
     .gameplay-showcase-card {
       flex-direction: column !important;
-      padding-bottom: 0;
+      padding: 0;
     }
     .gameplay-showcase-card > img {
       width: 100%;
       height: auto;
       margin-top: 0;
+    }
+    .gameplay-showcase-card > div {
+      padding: 16px 0;
     }
   }
 </style>
